@@ -3,6 +3,7 @@ import { View, Text } from 'react-native';
 import { connect } from 'react-redux';
 import { emailChanged, passwordChanged, loginUser } from '../actions';
 import { Card, CardSection, Input, Button, Spinner } from './commom/Commom';
+import { Actions } from 'react-native-router-flux';
 
 class LoginForm extends Component {
     onEmailChange(text) {
@@ -45,32 +46,34 @@ class LoginForm extends Component {
 
     render() {
         return (
-            <Card>
-                <CardSection>
-                    <Input
-                        label="Email"
-                        placeholder="email@gmail.com"
-                        onChangeText={this.onEmailChange.bind(this)}
-                        value={this.props.email}
-                    ></Input>
-                </CardSection>
-                <CardSection>
-                    <Input
-                        secureTextEntry
-                        label="Password"
-                        placeholder="password"
-                        onChangeText={this.onPasswordChange.bind(this)}
-                        value={this.props.password}
-                    ></Input>
-                </CardSection>
-                {this.renderError()}
-                <CardSection>
-                    {/* <Button onPress={this.onButtonPress.bind(this)}>
+            <View style={{flex: 1, marginTop:70}}>
+                <Card>
+                    <CardSection style={{ marginTop: 50 }}>
+                        <Input
+                            label="Email"
+                            placeholder="email@gmail.com"
+                            onChangeText={this.onEmailChange.bind(this)}
+                            value={this.props.email}
+                        ></Input>
+                    </CardSection>
+                    <CardSection>
+                        <Input
+                            secureTextEntry
+                            label="Password"
+                            placeholder="password"
+                            onChangeText={this.onPasswordChange.bind(this)}
+                            value={this.props.password}
+                        ></Input>
+                    </CardSection>
+                    {this.renderError()}
+                    <CardSection>
+                        {/* <Button onPress={this.onButtonPress.bind(this)}>
                         Login
                     </Button> */}
-                    {this.renderButton()}
-                </CardSection>
-            </Card>
+                        {this.renderButton()}
+                    </CardSection>
+                </Card>
+            </View>
         );
     }
 }
