@@ -8,7 +8,6 @@ import ListItem from './ListItem';
 class EmployeeList extends Component {
     componentWillMount() {
         this.props.employeesFetch();
-        console.log(this.props.employees);
         this.createDataSource(this.props);
     }
 
@@ -29,7 +28,6 @@ class EmployeeList extends Component {
     }
 
     render() {
-        console.log(this.props.employees);
         return (
             <View style={{ marginTop: 60 }}>
                 <ListView 

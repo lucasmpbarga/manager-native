@@ -1,0 +1,5 @@
+Router, causando erro "Require cycles are allowed, but can result in uninitialized values." - Avaliar https://facebook.github.io/react-native/docs/navigation documentação oficial.
+
+Firebase, causando erro "Closed Setting a timer for a long period of time, i.e. multiple minutes"
+
+ListView, causando erro  "ListView Deprecation Warning"
